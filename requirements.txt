@@ -9,8 +9,11 @@ certifi==2025.1.31
 charset-normalizer==3.4.1
 click==8.1.8
 deprecation==2.1.0
+fake-useragent==2.2.0
 fastapi==0.115.12
 frozenlist==1.5.0
+geographiclib==2.0
+geopy==2.4.1
 gotrue==2.12.0
 h11==0.14.0
 h2==4.2.0

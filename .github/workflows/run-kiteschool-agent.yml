@@ -1,0 +1,13 @@
+name: Run Kiteschool Agent Daily
+
+on:
+  schedule:
+    - cron: '0 3 * * *'
+  workflow_dispatch:
+
+jobs:
+  run-agent:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call Kiteschool Agent API
+        run: curl -X GET '${{ secrets.AGENT_API_URL }}/agent/run-kiteschool-agent'
