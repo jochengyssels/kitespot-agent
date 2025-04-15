@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: Call Kitespot Agent API
         run: |
-          RESPONSE=$(curl -s -o /dev/null -w "%{http_code}" -X GET "https://kitespot-agent.vercel.app/agent/run-kitespot-agent")
+          RESPONSE=$(curl -s -o /dev/null -w "%{http_code}" -X GET "https://kitespot-agent-loooau0jf-jochengyssels-gmailcoms-projects.vercel.app")
           if [ $RESPONSE -ne 200 ]; then
             echo "Agent run failed with status $RESPONSE"
             exit 1
