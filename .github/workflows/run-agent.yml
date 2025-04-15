@@ -1,0 +1,19 @@
+name: Run Kitespot Agent Daily
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # Runs every day at midnight UTC
+  workflow_dispatch: # Manual trigger button in GitHub
+
+jobs:
+  run-agent:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Call Kitespot Agent API
+        run: |
+          RESPONSE=$(curl -s -o /dev/null -w "%{http_code}" -X GET "https://kitespot-agent.vercel.app/agent/run-kitespot-agent")
+          if [ $RESPONSE -ne 200 ]; then
+            echo "Agent run failed with status $RESPONSE"
+            exit 1
+          fi
